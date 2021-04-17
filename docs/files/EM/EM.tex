@@ -1,0 +1,220 @@
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper, margin=0.2in}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{multicol,lipsum}
+\usepackage{amsmath}
+\usepackage{sectsty}
+\usepackage[usenames, dvipsnames]{color}
+\sectionfont{\fontsize{12}{15}\selectfont}
+%SetFonts
+
+%SetFonts
+\usepackage{titling}
+\setlength{\droptitle}{-5em}   % This is your set screw
+
+\title{Jackson formula}
+\author{Shaowei Wu}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.4pt}
+
+\section{Lorentz transformation}
+
+
+\subsection{$K'$ moving at speed $v$ along $z$ direction viewed by $K$}
+$$
+\left.\begin{array}{l}
+  x'_0=\gamma (x_0- \beta x_1)\\
+  x'_1=\gamma (x_1- \beta x_0)\\
+  x'_2=x_2\\
+  x'_3=x_3\\
+\end{array}\right\}(11.16)
+$$
+where $\beta=|\boldsymbol{\beta}|=v/c$, $\gamma=\frac{1}{\sqrt{1-\beta ^2}}$\quad(11.17)\\
+Inverse Lorentz transformation
+$$
+\left.\begin{array}{l}
+x_{0}=\gamma\left(x_{0}^{\prime}+\beta x_{1}^{\prime}\right) \\ 
+x_{1}=\gamma\left(x_{1}^{\prime}+\beta x_{0}^{\prime}\right) \\ 
+x_{2}=x_{2}^{\prime} \\
+x_{3}=x_{3}^{\prime}
+\end{array}\right\}(11.18)
+$$
+Generally, 
+$$
+\left.\begin{array}{l}
+x_{0}^{\prime}=\gamma\left(x_{0}-\boldsymbol{\beta} \cdot \mathbf{x}\right) \\ \\
+\mathbf{x}^{\prime}=\mathbf{x}+\frac{(\gamma-1)}{\beta^{2}}(\boldsymbol{\beta} \cdot \mathbf{x}) \boldsymbol{\beta}-\gamma \boldsymbol{\beta} x_{0}
+\end{array}\right\}(11.19)
+$$
+
+
+\subsection{4-vectors}
+$$(A_0,\boldsymbol{A})=(A_0, A_1, A_2, A_3)$$
+$$
+\left.\begin{array}{rl}
+A_{0}^{\prime} & =\gamma\left(A_{0}-\boldsymbol{\beta} \cdot \mathbf{A}\right) \\ A_{\|}^{\prime} & =\gamma\left(A_{\|}-\beta A_{0}\right) \\ 
+\mathbf{A}_{\perp}^{\prime} & =\mathbf{A}_{\perp}
+\end{array}\right\}(11.22)
+$$
+$\perp$ and $\|$ mean perpendicular and parallel to $\boldsymbol{v}$.\\
+The scalar product of two 4-vectors are invariant.\\
+Notation: $(x_0, \boldsymbol{x})\equiv (x_0=c t, x_1=z, x_2=x, x_3=y)$
+
+\subsection{proper time $\tau$}
+$$d \tau=d t \sqrt{1-\beta^{2}(t)}=\frac{d t}{\gamma(t)}$$
+(11.26)\\
+$$t_{2}-t_{1}=\int_{\tau_{1}}^{\tau_{2}} \frac{d \tau}{\sqrt{1-\beta^{2}(\tau)}}=\int_{\tau_{1}}^{\tau_{2}} \gamma(\tau) d \tau$$
+(11.27)\\
+\\
+Timelike:\\
+$$c^{2}\left(t_{1}-t_{2}\right)^{2}-\left|\mathbf{x}_{1}-\mathbf{x}_{2}\right|^{2}>0$$
+Spacelike:\\
+$$c^{2}\left(t_{1}-t_{2}\right)^{2}-\left|\mathbf{x}_{1}-\mathbf{x}_{2}\right|^{2}<0$$
+Lightlike:\\
+$$c^{2}\left(t_{1}-t_{2}\right)^{2}-\left|\mathbf{x}_{1}-\mathbf{x}_{2}\right|^{2}=0$$
+
+\subsection{relativistic Doppler shift}
+phase of a wave $\phi=\omega t - \boldsymbol{k} \cdot \boldsymbol{x}$ is invariant.\\
+$(k_0, \boldsymbol{k})\equiv(\omega/c, \boldsymbol{k})$ is a 4-vector.\\
+For light waves: $k_0=|\boldsymbol{k}|$. Thus, $\omega'=\gamma\omega(1-\beta cos\theta)\quad(11.30)$
+
+\section{addition of velocity}
+A point P moves in inertia frame K' with velocity $\boldsymbol{u}\equiv\frac{d \mathbf{x'}}{dt'}$. K' moves in inertia frame K with velocity $\boldsymbol{v}$. What is the velocity of P in K?
+$$\begin{aligned} 
+u_{\|}=& \frac{u_{\|}^{\prime}+v}{1+\frac{\mathbf{v} \cdot \mathbf{u}^{\prime}}{c^{2}}} \\ 
+\mathbf{u}_{\perp}=& \frac{\mathbf{u}_{\perp}^{\prime}}{\gamma_{v}\left(1+\frac{\mathbf{v} \cdot \mathbf{u}^{\prime}}{c^{2}}\right)} 
+\end{aligned}\quad(11.31)$$
+If $\boldsymbol{u}$ and $\boldsymbol{v}$ are parallel, then:\\
+$$u=\frac{u^{\prime}+v}{1+\frac{v u^{\prime}}{c^{2}}}\quad(11.33)$$
+
+\section{relativistic dynamics}
+\subsection{4-velocity $(U_0, \mathbf{U})=(\gamma_{u} c, \gamma_{u} \mathbf{u})$}
+$$\left.\begin{array}{rl}
+U_{0} & \equiv \frac{d x_{0}}{d \tau}=\frac{d x_{0}}{d t} \frac{d t}{d \tau}=\gamma_{u} c \\\\
+\mathbf{U} & \equiv \frac{d \mathbf{x}}{d \tau}=\frac{d \mathbf{x}}{d t} \frac{d t}{d \tau}=\gamma_{u} \mathbf{u}
+\end{array}\right\}(11.36)$$
+
+\subsection{4-momentum $(p_0, \mathbf{p})=(E/c, \gamma_u m \mathbf{u})=m(U_0, \mathbf{U})$}
+The only way to construct a 4-vector of momentum is to multiply 4-velocity by rest mass $m$.\\
+The momentum of a particle of mass $m$ and velocity $\mathbf{u}$ is
+$$\mathbf{p}=\gamma_u m \mathbf{u}=\frac{m \mathbf{u}}{\sqrt{1-\frac{u^2}{c^2}}}\quad(11.46)$$ 
+The total energy of a particle of mass $m$ is $$E=\gamma_u m c^2=\frac{m c^2}{\sqrt{1-\frac{u^2}{c^2}}}\quad (11.51)$$
+Kinetic energy: $T(u)=mc^2(\frac{1}{\sqrt{1-\frac{u^2}{c^2}}}-1)$\quad(11.49)\\
+The conservation of total energy and total momentum can be written as conservation of total 4-momentum.
+We also have:\\
+$$E=\sqrt{c^2 p^2+m^2 c^4}\quad(11.55)$$
+
+\subsection{rapidity/boost parameter $\xi$}
+$$\beta=tanh \xi$$
+$$\gamma=cosh\xi$$
+$$\gamma\beta=sinh\xi$$
+(11.20)
+
+\section{homogeneous Lorentz group/Poincare group}
+Mathematical equations expressing the law of nature must be covariant/inariant in form.
+\subsection{tensor of rank $k$}
+Transformation in space time point: $x\rightarrow x'$
+
+rank 0: scalar (invariant) \\  
+\\
+rank 1: contravariant vector\\
+$$A'^\alpha=\frac{\partial x'^\alpha}{\partial x^\beta}A^\beta \quad (11.61)$$
+rank 1: covariant vector\\
+$$A'_\alpha=\frac{\partial x^\beta}{\partial x'^\alpha}A_\beta \quad (11.62)$$
+rank-2 contravariant tensor\\
+$$F'^{\alpha \beta}=\frac{\partial x'^{\alpha}}{\partial x^{\gamma}} \frac{\partial x'^{\beta}}{\partial x^{\delta}} F^{\gamma \delta} \quad(11.63)$$
+rank-2 covariant tensor\\
+$$F'_{\alpha \beta}=\frac{\partial x^{\gamma}}{\partial x'^{\alpha}} \frac{\partial x^{\delta}}{\partial x'^{\beta}} F_{\gamma \delta} \quad(11.64)$$
+inner/scalar product of two vectors:
+$$B\cdot A\equiv B_\alpha A^\alpha \quad (11.65)$$
+\subsection{metric tensor}
+$$g_{\alpha\beta}=
+\begin{pmatrix} 
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix}=g^{\alpha\beta} \quad(11.81)$$
+
+$$x_\alpha=g_{\alpha\beta}x^\beta \quad(11.72)$$
+$$x^\alpha=g^{\alpha\beta}x_\beta \quad(11.73)$$
+
+Concisely we have:
+$$A^{\alpha}=\left(A^{0}, \mathbf{A}\right), \quad A_{\alpha}=\left(A^{0},-\mathbf{A}\right)\quad (11.75)$$
+$$\begin{aligned} \partial^{\alpha} & \equiv \frac{\partial}{\partial x_{\alpha}}=\left(\frac{\partial}{\partial x^{0}},-\nabla\right) \\
+\partial_{\alpha} & \equiv \frac{\partial}{\partial x^{\alpha}}=\left(\frac{\partial}{\partial x^{0}}, \nabla\right) \end{aligned}\\
+\quad(11.76) 
+$$
+$$\partial^{\alpha} A_{\alpha}=\partial_{\alpha} A^{\alpha}=\frac{\partial A^{0}}{\partial x^{0}}+\nabla \cdot \mathbf{A}\quad (11.77)$$
+
+Laplacian operator:\\
+$$\square \equiv \partial_{\alpha} \partial^{\alpha}=\frac{\partial^{2}}{\partial x^{02}}-\nabla^{2}\quad(11.78)$$
+
+\section{relativistic electrodynamics}
+\subsection{Lorentz force equation}
+$$\textcolor{red}{\frac{d \mathbf{p}}{d t}=q\left(\mathbf{E}+\frac{\mathbf{v}}{c} \times \mathbf{B}\right)}\quad(11.124)$$
+If we use proper time instead, then\\
+$$\begin{aligned}
+\frac{d \mathbf{p}}{d \tau}=&\frac{d \mathbf{p}}{d t}\frac{d t}{d \tau}\\
+=&q\gamma \left(\mathbf{E}+\frac{\mathbf{v}}{c} \times \mathbf{B}\right)\\
+=&\frac{q}{c}(\gamma c \mathbf{E}+\gamma \mathbf{v}\times B)\\
+=&\frac{q}{c}\left(U_{0} \mathbf{E}+\mathbf{U} \times \mathbf{B}\right)
+\end{aligned}\quad(11.125)$$
+Similar to Newton dynamic, we have:
+$$\frac{d p_{0}}{d \tau}=\frac{q}{c} \mathbf{U} \cdot \mathbf{E}\quad(11.126)$$
+
+\subsection{continuity equation}
+Electric charge is conserved. The continuity equation still works.
+$$\textcolor{red}{\frac{\partial \rho}{\partial t}+\nabla \cdot \mathbf{J}=0} \quad (11.127)$$
+Equation (11.77) and (11.127) implies that we can write charge density $\rho$ and current density $J$ in 4-vector form:\\
+$$J^\alpha=(c \rho, \mathbf{J})\quad(11.128)$$
+Then we have:\\
+$$\partial_{\alpha} J^{\alpha}=0\quad (11.129)$$
+
+\subsection{Lorentz gauge}
+$$\begin{array}{l}\frac{1}{c^{2}} \frac{\partial^{2} \mathbf{A}}{\partial t^{2}}-\nabla^{2} \mathbf{A}=\frac{4 \pi}{c} \mathbf{J} \\
+\\
+\frac{1}{c^{2}} \frac{\partial^{2} \Phi}{\partial t^{2}}-\nabla^{2} \Phi=4 \pi \rho
+\end{array}\quad(11.130)$$
+\\
+Lorentz condition:\\
+$$\frac{1}{c} \frac{\partial \Phi}{\partial t}+\mathbf{\nabla} \cdot \mathbf{A}=0\quad(11.131)$$
+
+$$A^\alpha=(\Phi, \mathbf{A})\quad(11.132)$$
+Equation (11.130)+(11.78):\\
+$$\square A^{\alpha}=\frac{4 \pi}{c} J^{\alpha}\quad(11.133)$$
+Equation (11.131)+(11.77):\\
+$$\partial_{\alpha} A^{\alpha}=0\quad(11.133)$$
+Field in terms of potential:\\
+$$\begin{aligned} \mathbf{E} &=-\frac{1}{c} \frac{\partial \mathbf{A}}{\partial t}-\nabla \Phi \\ \mathbf{B} &=\mathbf{\nabla} \times \mathbf{A} \end{aligned}\quad(11.134)$$
+
+$$F^{\alpha \beta}=\left(\begin{array}{cccc}0 & -E_{x} & -E_{y} & -E_{z} \\ E_{x} & 0 & -B_{z} & B_{y} \\ E_{y} & B_{z} & 0 & -B_{x} \\ E_{z} & -B_{y} & B_{x} & 0\end{array}\right)$$
+$$\frac{d p^{\alpha}}{d \tau}=m \frac{d U^{\alpha}}{d \tau}=\frac{q}{c} F^{\alpha \beta} U_{\beta}$$
+
+\subsection{transformation of electromagnetic field}
+Transformation of the rank-2 tensor $F^{\alpha \beta}$ follows equation (11.63).
+Thus we can deduce the transformation of field directly as below.
+$$\begin{array}{ll}E_{1}^{\prime}=E_{1} & B_{1}^{\prime}=B_{1} \\ E_{2}^{\prime}=\gamma\left(E_{2}-\beta B_{3}\right) & B_{2}^{\prime}=\gamma\left(B_{2}+\beta E_{3}\right) \\ E_{3}^{\prime}=\gamma\left(E_{3}+\beta B_{2}\right) & B_{3}^{\prime}=\gamma\left(B_{3}-\beta E_{2}\right)\end{array}\quad(11.148)$$
+
+$$\begin{array}{l}\mathbf{E}^{\prime}=\gamma(\mathbf{E}+\boldsymbol{\beta} \times \mathbf{B})-\frac{\gamma^{2}}{\gamma+1} \boldsymbol{\beta}(\boldsymbol{\beta} \cdot \mathbf{E}) \\ \mathbf{B}^{\prime}=\gamma(\mathbf{B}-\boldsymbol{\beta} \times \mathbf{E})-\frac{\gamma^{2}}{\gamma+1} \boldsymbol{\beta}(\boldsymbol{\beta} \cdot \mathbf{B})\end{array}\quad(11.149)$$
+\\
+For electromagnetic field transformation of a charged particle, see Jackson 11.152.
+
+
+
+
+
+\end{multicols}
+
+\end{document}  

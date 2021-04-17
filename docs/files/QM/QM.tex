@@ -1,0 +1,105 @@
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper, margin=0.2in}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{multicol,lipsum}
+\usepackage{amsmath}
+\usepackage{sectsty}
+\sectionfont{\fontsize{12}{15}\selectfont}
+%SetFonts
+
+%SetFonts
+\usepackage{titling}
+\setlength{\droptitle}{-5em}   % This is your set screw
+
+\title{Quantum Mechanics formula}
+\author{Shaowei Wu}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.4pt}
+
+\section{Time-independent perturbation theory}
+\subsection{non-degenerate}
+$\hat{H}=\hat{H_0}+\hat{V}$, where $\hat{V}$ is the perturbation.\\*
+At $\hat{V}=0$, the problem is exactly solved below.\\*
+$\hat{H_0} |n^{(0)}\rangle=E_n^{(0)}|n^{(0)}\rangle$\\*
+$\hat{H}=\hat{H_0}+\lambda\hat{V}$\\*
+$(\hat{H}_{0}+\lambda \hat{V})|n(\lambda)\rangle= E_{n}(\lambda)|n(\lambda)\rangle$\\*
+\textbf{wave function:}\\*
+$|n^{(1)}\rangle=\sum\limits_{m\neq n}\frac{\langle m^{(0)}|\hat{V}|n^0\rangle}{E_n^{(0)}-E_m^{(0)}}|m^{(0)}\rangle$\\*
+$|n^{(2)}\rangle=\sum\limits_{m \neq n} \sum\limits_{m' \neq n} \frac{V_{m m'} V_{m' n}}{(E_{n}^{(0)}-E_{m}^{(0)})(E_{n}^{(0)}-E_{m'}^{(0)})}|m^{(0)}\rangle$\\*
+$where\: V_{m n} \equiv\left\langle m^{(0)}|V| n^{(0)}\right\rangle \not=\langle m|V| n\rangle$\\*
+$-\sum\limits_{m \neq n} \frac{ V_{m n} V_{n n}}{(E_{n}^{(0)}-E_{m}^{(0)})^{2}}|m^{(0)}\rangle$\\*
+$|n(\lambda)\rangle=|n^{(0)}\rangle+\lambda|n^{(1)}\rangle+\lambda^2 |n^{(2)}\rangle+\cdots$\\*
+\textbf{energy shift:}\\*
+$\Delta_{n} \equiv E_{n}-E_{n}^{(0)}=\lambda E_{n}^{(1)}+\lambda^{2} E_{n}^{(2)}+\cdots, $\\*
+\\*
+$E_{n}^{(1)}=\langle n^{(0)}|\hat{V}|n^{(0)}\rangle=V_{nn}$\\*
+$E_{n}^{(2)}=\sum\limits_{m \neq n} \frac{\left|V_{n m}\right|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}}=\sum\limits_{m \neq n} \frac{V_{n m}V_{m n}}{E_{n}^{(0)}-E_{m}^{(0)}}$\\*
+\subsection{quadratic Stark effect}
+The polarizability $\alpha$ of an atom is defined in terms of the energy shift of the atomic state as follow:
+$\Delta=-\frac{1}{2}\alpha|E|^2$\\
+$H_{0}=\frac{\mathbf{p}^{2}}{2 m}+V_{0}(r) \: \text { and } \: V=-e|\mathbf{E}| z \:(e<0 \text { for the electron })$\\
+The ground state of hydrogen atom is non-degenerate.\\
+$\Delta_{k}=-e|\mathbf{E}| z_{k k}+e^{2}|\mathbf{E}|^{2} \sum_{j \neq k} \frac{\left|z_{k j}\right|^{2}}{E_{k}^{(0)}-E_{j}^{(0)}}+\cdots$
+$z_{kk}=0$,
+$\alpha=-2 e^{2} \sum\limits_{k \neq 0}^{\infty} \frac{\left|\left\langle k^{(0)}|z| 1,0,0\right\rangle\right|^{2}}{\left[E_{0}^{(0)}-E_{k}^{(0)}\right]}$
+\subsection{degenerate spectrum}
+$H_0|m^{(0)}\rangle=E_D^{(0)}|m^{(0)}\rangle$\\
+$V_{m m'}=\langle m^{(0)} | \hat{V} |m'^{(0)}\rangle$\\
+1. Identify degenerate unperturbed eigenkets and construct the perturbation matrix $[V_{mn}]$, a g × g matrix if the degeneracy is g-fold.\\
+2. Diagonalize the perturbation matrix by solving, as usual, the appropriate secular equation.\\
+$$\operatorname{det}\left[V-\left(E-E_{D}^{(0)}\right)\right]=0$$
+3. Identify the roots of the secular equation with the \textbf{first-order energy shifts}; the base kets that diagonalize the V matrix are the correct \textbf{zeroth-order kets} that the perturbed kets approach in the limit  $\lambda\rightarrow$ 0.\\
+4. For higher orders, use the formulas of the corresponding nondegenerate perturbation theory except in the summations, where we exclude all contri- butions from the unperturbed kets in the degenerate subspace D.\\
+Second order correction:
+\section{Time-dependent perturbation theory}
+Interaction picture:\\
+$\left|\alpha, t_{0} ; t\right\rangle_{I}=e^{i H_{0} t / \hbar}\left|\alpha, t_{0} ; t\right\rangle_{S}$,
+$A_{I} \equiv e^{i H_{0} t / \hbar} A_{S} e^{-i H_{0} t / \hbar}$.\\
+$i \hbar \frac{\partial}{\partial t}\left|\alpha, t_{0} ; t\right\rangle_{I}=V_{I}\left|\alpha, t_{0} ; t\right\rangle_{I}$,
+$\left|\alpha, t_{0} ; t\right\rangle_{I}=\sum_{n} c_{n}(t)|n\rangle$.\\
+$\omega_{n m} \equiv \frac{\left(E_{n}-E_{m}\right)}{\hbar}=-\omega_{m n}$\\
+$\begin{aligned} c_{n}^{(0)}(t) &\left.=\delta_{n i} \quad \text { (independent of } t\right) \\ c_{n}^{(1)}(t) &=\frac{-i}{\hbar} \int_{t_{0}}^{t}\left\langle n\left|V_{I}\left(t^{\prime}\right)\right| i\right\rangle d t^{\prime} \\ &=\frac{-i}{\hbar} \int_{t_{0}}^{t} e^{i \omega_{n i} t^{\prime}} V_{n i}\left(t^{\prime}\right) d t^{\prime} \\ c_{n}^{(2)}(t) &=\left(\frac{-i}{\hbar}\right)^{2} \sum_{m} \int_{t_{0}}^{t} d t^{\prime} \int_{t_{0}}^{t^{\prime}} d t^{\prime \prime} e^{i \omega_{n m} t^{\prime}} V_{n m}\left(t^{\prime}\right) e^{i \omega_{m i} t^{\prime \prime}} V_{m i}\left(t^{\prime \prime}\right) \end{aligned}$\\
+$P(i \rightarrow n)=\left|c_{n}^{(1)}(t)+c_{n}^{(2)}(t)+\cdots\right|^{2}$
+
+\section{Spherical harmonics and angular momentum}
+\subsection{normalization}
+The normalization of spherical harmonics varies and here we adopt the convention in QM:
+$\int Y_{l^{\prime}}^{m^{\prime *}}(\theta, \phi) Y_{l}^{m}(\theta, \phi) d \Omega=\delta_{l l^{\prime}} \delta_{m m^{\prime}}$\\
+$\int f d\Omega=\int_0^{2\pi}d \phi\int_0^{\pi} f sin(\theta) d \theta$\\
+$\int f d x^3=\int_0^{2\pi}d \phi\int_0^{\pi} d\theta \int_0^{\infty} f sin(\theta) r^2 d r$
+\subsection{angular momentum operator}
+$J_{+}=J_{x}+i J_{y}, J_{-}=J_{x}-i J_{y}\iff J_x=\frac{J_+ +J_-}{2}, J_y=\frac{J_+-J_-}{2 i}$\\
+$Eigenstate\:of\:L\:and\:L_z:\langle\hat{\mathbf{n}} | l, m\rangle= Y_{l}^{m}(\theta, \phi)=Y_{l}^{m}(\hat{\mathbf{n}})$\\
+$J_{\pm}|j, m\rangle=\sqrt{(j\mp m)(j\pm m+1)} \hbar|j, m\pm1\rangle$\\
+$J^2|j, m\pm1\rangle=j(j+1)\hbar^2|j, m\pm1\rangle, J_z|j, m\pm1\rangle=m\hbar|j, m\pm1\rangle$
+\subsection{parity and conjugate}
+$\hat{\pi}\{\theta,\phi\}\to\{\pi-\theta,\pi+\phi\}, \\
+\hat{\pi}Y_{l}^{m}(\theta,\phi)\to Y_{l}^{m}(\pi-\theta,\pi+\phi)=(-1)^l Y_{l}^{m}(\theta,\phi)$\\
+$Y_l^{m*}(\theta,\phi)=(-1)^m Y_l^{-m}(\theta,\phi)$
+\subsection{list of spherical harmonics of low order}
+$\begin{aligned} Y_{0}^{0} &=\frac{1}{\sqrt{4 \pi}}, \quad Y_{1}^{0}=\sqrt{\frac{3}{4 \pi}} \cos \theta \\ Y_{1}^{\pm 1} &=\mp \sqrt{\frac{3}{8 \pi}}(\sin \theta) e^{\pm i \phi}, Y_{2}^{0} =\sqrt{\frac{5}{16 \pi}}\left(3 \cos ^{2} \theta-1\right) \\ Y_{2}^{\pm 1} &=\mp \sqrt{\frac{15}{8 \pi}}(\sin \theta \cos \theta) e^{\pm i \phi} \\ Y_{2}^{\pm 2} &=\sqrt{\frac{15}{32 \pi}}\left(\sin ^{2} \theta\right) e^{\pm 2 i \phi} \end{aligned}$
+\section{Spherical operator, Wigner-Eckart Theorem and selection rule}
+\subsection{tensor operators}
+$T_q^{(k)}=Y_{l=k}^{m=q}(\mathbf{V})$
+\subsection{selection rule}
+$\left\langle\alpha^{\prime}, j^{\prime} m^{\prime}\left|T_{q}^{(k)}\right| \alpha, j m\right\rangle= 0, \\
+\text { unless } m^{\prime}=q+m \text{ and } |j-k|\le j'\le |j+k|$
+
+
+
+
+
+\end{multicols}
+
+\end{document}  
